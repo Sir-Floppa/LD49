@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a4e6dd9c-3b48-4148-809a-c693b7c623af}">
+		<property name="assetPath">
+			<value>3 Palos.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>192</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>32.049999999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a96568fb-d6b7-4824-9b1c-a3689a8c4b08}</destination>
+		</relationship>
+	</object>
+</objects>
