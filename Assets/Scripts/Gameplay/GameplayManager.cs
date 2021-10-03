@@ -12,6 +12,7 @@ public class GameplayManager : MonoBehaviour
     public GameObject Canvas;
     public GameObject SelectedObject;
     public bool IsSelected = false;
+    public ButtonsBugs SelectedBug;
 
     // Start is called before the first frame update
     void Start()
@@ -22,22 +23,41 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsSelected)
+        if(SelectedBug == ButtonsBugs.eachClickClone)
         {
+            if (GestureManager.Touching && IsSelected && SelectedObject != null)
+            {
 
-            Vector2 pos;
+                Vector2 pos;
 
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                                        Canvas.transform as RectTransform, 
-                                        Input.mousePosition, 
-                                        Canvas.GetComponent<Canvas>().worldCamera, out pos);
-            SelectedObject.transform.position = Canvas.transform.TransformPoint(pos);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                                            Canvas.transform as RectTransform,
+                                            Input.mousePosition,
+                                            Canvas.GetComponent<Canvas>().worldCamera, out pos);
+
+
+                SelectedObject.transform.position = Canvas.transform.TransformPoint(pos);
+            }
         }
-        else { 
+        else if(SelectedBug == ButtonsBugs.OnlyDraggable)
+        {
+            if (GestureManager.Touching && IsSelected && SelectedObject != null)
+            {
+
+                Vector2 pos;
+
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                                            Canvas.transform as RectTransform,
+                                            Input.mousePosition,
+                                            Canvas.GetComponent<Canvas>().worldCamera, out pos);
+
+
+                SelectedObject.transform.position = Canvas.transform.TransformPoint(pos);
+            }
         }
     }
 
-    public void SelectOption(GameObject Selected)
+    public void SelectOption(GameObject Selected, ButtonsBugs Way)
     {
 
         GameObject GO = GameObject.Instantiate(Selected);
@@ -46,6 +66,14 @@ public class GameplayManager : MonoBehaviour
 
         SelectedObject = GO;
 
+        SelectedBug = Way;
         IsSelected = true;
     }
+}
+
+public enum ButtonsBugs
+{
+    stucked,
+    eachClickClone,
+    OnlyDraggable
 }
