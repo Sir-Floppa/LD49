@@ -64,6 +64,8 @@ public class GameplayManager : MonoBehaviour
 
         GO.transform.parent = Canvas.transform;
 
+        GO.transform.localScale = new Vector3(1, 1, 1);
+
         SelectedObject = GO;
 
         SelectedBug = Way;
