@@ -66,6 +66,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("End of the conversation");
+        inDialogue = false;
     }
 
     // Update is called once per frame
