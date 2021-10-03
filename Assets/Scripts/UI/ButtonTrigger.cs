@@ -6,10 +6,11 @@ public class ButtonTrigger : MonoBehaviour
 {
 
     public GameplayManager GpM;
+    public ButtonsBugs Bug;
 
     public void SelectOption()
     {
-        GpM.SelectOption(this.gameObject);
+        GpM.SelectOption(this.gameObject, Bug);
     }
 
     // Start is called before the first frame update
