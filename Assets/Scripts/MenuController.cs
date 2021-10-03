@@ -14,4 +14,16 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene(levelId);
     }
+
+    public void ShowCredits(GameObject creditsPanel)
+    {
+        if (!creditsPanel.activeInHierarchy)
+        {
+            creditsPanel.SetActive(true);
+        }
+        else
+        {
+            creditsPanel.SetActive(false);
+        }
+    } 
 }
