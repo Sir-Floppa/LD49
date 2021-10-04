@@ -19,7 +19,7 @@ public class TriggerDecision : MonoBehaviour
 
     public void StartDecition()
     {
-        GM.StartDecisionMenu(decision ,Button1, Button2, Button3, Button4);
+        GM.StartDecisionMenu(decision, Button1, Button2, Button3, Button4);
     }
 
     // Start is called before the first frame update

@@ -236,7 +236,7 @@ MonoBehaviour:
     Title: Look at the calendar
     Description: 
   Button2:
-    Title: Go for water
+    Title: Turn on the PC
     Description: 
   Button3:
     Title: Take the phone
@@ -259,8 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fstOpTrigger: {fileID: 1231014569}
   secOpTrigger: {fileID: 1231014570}
-  trdOpTrigger: {fileID: 0}
-  frtOpTrigger: {fileID: 0}
+  trdOpTrigger: {fileID: 1231014572}
+  frtOpTrigger: {fileID: 1231014571}
 --- !u!4 &534056917
 Transform:
   m_ObjectHideFlags: 0
@@ -521,6 +521,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8209018141418332279}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1126565739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1758056212, guid: 0d100259362557e4e911800deb61b68a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8209018141418332279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1171108663 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8209018142529655616, guid: 0d100259362557e4e911800deb61b68a,
@@ -680,9 +692,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'I turn the tap but there doesn''t seem to be any water. '
-    - "\u2013Are the pipes clogged?"
-    - "After checking the bathroom I realize there\u2019s no water in the apartment."
+    - After turning on the PC I grab my headphones and listen to my favorite playlist.
+    - 'Time flies as I lose myself on the internet. '
+    - It will surely dawn before I know it.
+    - "\u2013Maybe I can search about my dreams..."
+    - "After half an hour of reading about recurring dreams I decide to investigate
+      about strange creatures like the one a saw\u2026 or was? Anyway!"
+    - "Almost instantly I reach a forum about paranormal stuff. \u2013Never heard
+      of it. And what's with this old design?"
+    - 'I don''t frequent this kind of sites for a reason. '
+    - To my surprise there were a lot of folks who described the same creature.
+    - "\u2013But that\u2019s just a coincidence, maybe it\u2019s from a movie \u2013even
+      though I don\u2019t watch horror movies so it must be from a different kind
+      of show."
+    - Besides, there was no answer in any of those posts.
+    - At this point I start to feel anxious but keep scrolling down a little further.
+    - Finally, I see a thread filled with only one-letter replies.
+    - "\u2013That is\u2026"
+    - "\u2013That's my name!? "
+    - Everything turns off and the room is engulfed by an oppressive atmosphere.
+    - "\u2013What's happening? \u2013Alone in the darkness I begin to panic\u2013.
+      Think\u2026 Think. Keep your head clear \u2013I repeat to myself."
     onEndToDecide: {fileID: 534056915}
 --- !u!114 &1231014571
 MonoBehaviour:
@@ -726,6 +756,108 @@ MonoBehaviour:
       else.
     - "\u2013Not the best time to be reading this."
     onEndToDecide: {fileID: 534056915}
+--- !u!1 &1365278044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4679742414345737501, guid: 23be49a224cb2ed49bf8a2d793dd67a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1899073916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1365278045
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365278044}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 75da965db56c1254398409e30016ff18, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1527979605
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +898,7 @@ MonoBehaviour:
   DecisionActions: {fileID: 1000856806}
   ButtonTitle1: {fileID: 312405319}
   ButtonTitle2: {fileID: 567604843}
-  ButtonTitle3: {fileID: 567604843}
+  ButtonTitle3: {fileID: 1126565739}
   ButtonTitle4: {fileID: 640892343}
 --- !u!4 &1527979607
 Transform:
@@ -1178,7 +1310,7 @@ PrefabInstance:
     - target: {fileID: 8209018142239904237, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 145.1206
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142239904237, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1188,7 +1320,7 @@ PrefabInstance:
     - target: {fileID: 8209018142239904237, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -217.68091
+      value: -217.5
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142260007741, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1208,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: 8209018142260007741, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 145.1206
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142260007741, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1218,7 +1350,7 @@ PrefabInstance:
     - target: {fileID: 8209018142260007741, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -72.5603
+      value: -72.5
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142280736177, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1238,7 +1370,7 @@ PrefabInstance:
     - target: {fileID: 8209018142280736177, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 145.1206
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142280736177, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1248,7 +1380,7 @@ PrefabInstance:
     - target: {fileID: 8209018142280736177, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -217.68091
+      value: -217.5
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142440356656, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1284,8 +1416,7 @@ PrefabInstance:
     - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: 'I try to open my eyes, but my eyelids feel so heavy and so does my
-        legs. '
+      value: 'I try to open my eyes, but my eyelids feel so heavy and so do my legs. '
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1394,7 +1525,7 @@ PrefabInstance:
     - target: {fileID: 8209018142965818728, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 145.1206
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 8209018142965818728, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
@@ -1404,7 +1535,7 @@ PrefabInstance:
     - target: {fileID: 8209018142965818728, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -72.5603
+      value: -72.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d100259362557e4e911800deb61b68a, type: 3}

@@ -117,7 +117,7 @@ public class GameplayManager : MonoBehaviour
     public Text ButtonTitle3;
     public Text ButtonTitle4;
 
-    public void StartDecisionMenu(Decision deci, ActionMenu Btn1, ActionMenu btn2, ActionMenu Btn3, ActionMenu Btn4)
+    public void StartDecisionMenu(Decision deci, ActionMenu Btn1, ActionMenu Btn2, ActionMenu Btn3, ActionMenu Btn4)
     {
         DecisionsPanel.SetActive(true);
         DialoguePanel.SetActive(false);
@@ -125,9 +125,16 @@ public class GameplayManager : MonoBehaviour
         DecisionActions = deci;
 
         ButtonTitle1.text = Btn1.Title;
-        ButtonTitle2.text = btn2.Title;
+        ButtonTitle2.text = Btn2.Title;
         ButtonTitle3.text = Btn3.Title;
         ButtonTitle4.text = Btn4.Title;
+
+        Debug.Log("BUTTON LIST: ");
+        Debug.Log(ButtonTitle1.text);
+        Debug.Log(ButtonTitle2.text);
+        Debug.Log(ButtonTitle3.text);
+        Debug.Log(ButtonTitle4.text);
+
     }
 }
 
