@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameplayManager : MonoBehaviour
 
     [Header("Gameplay")]
     public GameObject Canvas;
+    public GameObject PlaceToSpawn;
     public GameObject SelectedObject;
     public bool IsSelected = false;
     public ButtonsBugs SelectedBug;
@@ -57,25 +59,81 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
-    public void SelectOption(GameObject Selected, ButtonsBugs Way)
+    public void SelectOption(GameObject Selected, string option)
     {
+        //GameObject GO = GameObject.Instantiate(Selected, Selected.GetComponent<RectTransform>());
 
-        GameObject GO = GameObject.Instantiate(Selected);
+        //GO.GetComponent<ButtonTrigger>().Actionable = false;
 
-        GO.transform.parent = Canvas.transform;
+        //GO.transform.parent = PlaceToSpawn.transform;
 
-        GO.transform.localScale = new Vector3(1, 1, 1);
+        //GO.transform.localScale = new Vector3(1, 1, 1);
 
-        SelectedObject = GO;
+        //SelectedObject = GO;
 
-        SelectedBug = Way;
-        IsSelected = true;
+        ////SelectedBug = Way;
+        //IsSelected = true;
+
+
+        if(option == "1")
+        {
+            DecisionActions.DecideBtn1();
+        }
+        else if(option == "2")
+        {
+            DecisionActions.DecideBtn2();
+        }
+        else if(option == "3")
+        {
+            DecisionActions.DecideBtn3();
+        }
+        else if(option == "4")
+        {
+            DecisionActions.DecideBtn4();
+        }
+
+    }
+
+
+    [Header("Dialog Management")]
+    public GameObject DialoguePanel;
+    public GameObject DecisionsPanel;
+
+    public void StartDialogue()
+    {
+        DialoguePanel.SetActive(true);
+        DecisionsPanel.SetActive(false);
+    }
+
+
+
+
+
+    public Decision DecisionActions;
+
+    [Header("Buttton Titles")]
+    public Text ButtonTitle1;
+    public Text ButtonTitle2;
+    public Text ButtonTitle3;
+    public Text ButtonTitle4;
+
+    public void StartDecisionMenu(Decision deci, ActionMenu Btn1, ActionMenu btn2, ActionMenu Btn3, ActionMenu Btn4)
+    {
+        DecisionsPanel.SetActive(true);
+        DialoguePanel.SetActive(false);
+
+        DecisionActions = deci;
+
+        ButtonTitle1.text = Btn1.Title;
+        ButtonTitle2.text = btn2.Title;
+        ButtonTitle3.text = Btn3.Title;
+        ButtonTitle4.text = Btn4.Title;
     }
 }
 
 public enum ButtonsBugs
 {
-    stucked,
+    Default,
     eachClickClone,
-    OnlyDraggable
+    OnlyDraggable,
 }

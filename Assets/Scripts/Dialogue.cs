@@ -7,4 +7,6 @@ public class Dialogue
 {
     [TextArea(3, 6)]
     public string[] sentences;
+
+    public TriggerDecision onEndToDecide;
 }

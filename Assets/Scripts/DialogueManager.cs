@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public GameplayManager GM;
+
     public Queue<string> sentences;
 
     public Text dialogueText;
 
     public bool inDialogue = false;
+
+    public Dialogue ActiveDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("Starting conversation");
+        ActiveDialogue = dialogue;
         
         if (!inDialogue)
         {
@@ -67,6 +72,8 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of the conversation");
         inDialogue = false;
+
+        ActiveDialogue.onEndToDecide.StartDecition();
     }
 
     // Update is called once per frame
