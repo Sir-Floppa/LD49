@@ -233,16 +233,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 1527979606}
   Button1:
-    Title: Cry
+    Title: Look at the calendar
     Description: 
   Button2:
-    Title: Pray
+    Title: Go for water
     Description: 
   Button3:
-    Title: Suffer
+    Title: Take the phone
     Description: 
   Button4:
-    Title: Beg
+    Title: Look through the window
     Description: 
   decision: {fileID: 0}
 --- !u!114 &534056916
@@ -257,6 +257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eb467c3c436d34c8522dd6350a41c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fstOpTrigger: {fileID: 1231014569}
+  secOpTrigger: {fileID: 1231014570}
+  trdOpTrigger: {fileID: 0}
+  frtOpTrigger: {fileID: 0}
 --- !u!4 &534056917
 Transform:
   m_ObjectHideFlags: 0
@@ -492,6 +496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eb467c3c436d34c8522dd6350a41c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fstOpTrigger: {fileID: 0}
+  secOpTrigger: {fileID: 0}
+  trdOpTrigger: {fileID: 0}
+  frtOpTrigger: {fileID: 0}
 --- !u!4 &1000856807
 Transform:
   m_ObjectHideFlags: 0
@@ -614,8 +622,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1231014568}
   - component: {fileID: 1231014569}
+  - component: {fileID: 1231014570}
+  - component: {fileID: 1231014572}
+  - component: {fileID: 1231014571}
   m_Layer: 0
-  m_Name: FirstDialogue
+  m_Name: 1stDecisionDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,8 +660,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - Hola
-    - Buenas Tardes
+    - October 24th. I see the reminder between exclamations.
+    - "\u2013It's been a week since my birthday. "
+    - 'My family couldn''t come to pay a visit so they sent me a gift. '
+    - I know Halloween is coming but who wants a spooky mask for their birthday?
+    - "\u2013Where did I put that thing anyway? "
+    onEndToDecide: {fileID: 534056915}
+--- !u!114 &1231014570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231014567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e41b51f7acd5348aa85a3dd985e325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - 'I turn the tap but there doesn''t seem to be any water. '
+    - "\u2013Are the pipes clogged?"
+    - "After checking the bathroom I realize there\u2019s no water in the apartment."
+    onEndToDecide: {fileID: 534056915}
+--- !u!114 &1231014571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231014567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e41b51f7acd5348aa85a3dd985e325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - 'It''s raining a lot. '
+    - The trees sway in unison as if dancing fervently for the sky as thunders echo
+      like claps at the performance.
+    - "\u2013A storm huh? \u2013that explains the cold breeze."
+    - "\u2013Cold breeze\u2026?"
+    - "Pausing a moment to think about what I just said. \u2013Maybe it was my imagination."
+    - I walk away from the window and go back to the center of the room.
+    onEndToDecide: {fileID: 534056915}
+--- !u!114 &1231014572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231014567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e41b51f7acd5348aa85a3dd985e325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - 'I unlock the phone again and check my social media. '
+    - No messages or notifications.
+    - After reading some tweets about a series of kidnappings I decide to do something
+      else.
+    - "\u2013Not the best time to be reading this."
     onEndToDecide: {fileID: 534056915}
 --- !u!1 &1527979605
 GameObject:
@@ -1196,6 +1270,112 @@ PrefabInstance:
       propertyPath: dialogue.onEndToDecide
       value: 
       objectReference: {fileID: 534056915}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "I hear the sound of a clock\u2026 It's rough and echoes across the
+        room. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: 'I try to open my eyes, but my eyelids feel so heavy and so does my
+        legs. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "Now that I think about it, I don\u2019t even know where Am I in the
+        first place\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: Suddenly a cold breeze starts to flow through the place along with the
+        sound of footsteps.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: "\u2013Here!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: "Raising my arm trying to call for help I\u2019m interrupted by a strange
+        texture on my fingers. And my eyes finally open."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[6]
+      value: "\u2013Is this blood? \u2013I ask myself."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[7]
+      value: The smell is almost intoxicating. And the substance, black like the
+        darkest night, begins to secrete from my arm cascading to the ground until
+        my arm is no more.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[8]
+      value: "\u2013Ugh\u2026 \u2013I try to lead out a scream but my body doesn\u2019t
+        respond again."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[9]
+      value: "My head spins descending into a spiral of madness and then\u2026 I\u2019m
+        no longer here. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[10]
+      value: "Standing atop the stairs as an aberrant creature\u2013five appendages,
+        no hands nor feet\u2013I\u2019m paralyzed with panic as my eyes gaze at my
+        old body laying down the stairs, still bleeding. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[11]
+      value: Filled with horror I watch my whole body turn into nothing more but
+        a pool of blood.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[12]
+      value: "\u2013Ahhhh! \u2013I awake drenched in sweat \u2013. That dream again?!
+        What time it is?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[13]
+      value: "I look at the nightstand searching my phone a bit nervous. \u20131:35
+        AM.? I didn\u2019t sleep at all. \u2013I say a bit frustrated\u2013. And
+        why do I always have this dream? It felt so real somehow\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[14]
+      value: "\u2013Eh? How dark\u2026 \u2013I turn on the lights scared\u2013. Guess
+        I\u2019ll slack until the sun comes up then."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[15]
+      value: "\u2013. That dream again?! What time it is?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209018142529655630, guid: 0d100259362557e4e911800deb61b68a,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[16]
+      value: "\u2013. That dream again?! What time it is?"
+      objectReference: {fileID: 0}
     - target: {fileID: 8209018142965818728, guid: 0d100259362557e4e911800deb61b68a,
         type: 3}
       propertyPath: m_AnchorMax.y

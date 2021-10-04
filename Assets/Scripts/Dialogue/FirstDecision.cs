@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class FirstDecision : Decision
 {
+    public DialogueTrigger fstOpTrigger;
+    public DialogueTrigger secOpTrigger;
+    public DialogueTrigger trdOpTrigger;
+    public DialogueTrigger frtOpTrigger;
 
     public override void DecideBtn1()
     {
-        Debug.Log("Botton de la primera decisión");
+        fstOpTrigger.TriggerDialogue();
     }
 
     public override void DecideBtn2()
     {
-        
+        secOpTrigger.TriggerDialogue();
     }
 
     public override void DecideBtn3()
     {
-
+        trdOpTrigger.TriggerDialogue();
     }
     public override void DecideBtn4()
     {
-
+        frtOpTrigger.TriggerDialogue();
     }
 
     public override void StartThis()

@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Starting conversation");
         ActiveDialogue = dialogue;
+
+        GM.StartDialogue();
         
         if (!inDialogue)
         {
@@ -43,6 +45,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        StopAllCoroutines();
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -64,7 +67,7 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.04f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 
